@@ -5612,8 +5612,8 @@ int32_t lsm6dsm_fifo_write_trigger_get(stmdev_ctx_t *ctx,
     ret = lsm6dsm_read_reg(ctx, LSM6DSM_MASTER_CONFIG,
                            (uint8_t *)&master_config, 1);
 
-    switch ((fifo_ctrl2.timer_pedo_fifo_drdy << 1) +
-            fifo_ctrl2. timer_pedo_fifo_drdy)
+    switch ((master_config.data_valid_sel_fifo << 1) +
+             fifo_ctrl2.timer_pedo_fifo_drdy)
     {
       case LSM6DSM_TRG_XL_GY_DRDY:
         *val = LSM6DSM_TRG_XL_GY_DRDY;
