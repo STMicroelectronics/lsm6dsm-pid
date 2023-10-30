@@ -44,7 +44,7 @@ This directory contains the LSM6DSM component drivers.
 
 </div>
 
-<input type="checkbox" id="collapse-section2" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section2" aria-hidden="true">
 <label for="collapse-section2" aria-hidden="true">V1.1.0 / 01-June-2023</label>
 <div>
 
@@ -53,6 +53,17 @@ This directory contains the LSM6DSM component drivers.
 - Add __weak directive to read/write registers routines
 - Extend stmdev_ctx_t structure with mdelay callback
 - repo name changed adding '-pid' extension
+
+##
+
+</div>
+
+<input type="checkbox" id="collapse-section3" checked aria-hidden="true">
+<label for="collapse-section3" aria-hidden="true">V1.1.1 / 30-Oct-2023</label>
+<div>
+
+## Main changes
+- The switch case in method "lsm6dsm_fifo_write_trigger_get" used wrong bits to determine the "lsm6dsm_trigger_fifo_t" enum value.
 
 ##
 
