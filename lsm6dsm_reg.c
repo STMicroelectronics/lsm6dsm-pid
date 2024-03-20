@@ -52,7 +52,10 @@ int32_t __weak lsm6dsm_read_reg(const stmdev_ctx_t *ctx, uint8_t reg,
 {
   int32_t ret;
 
-  if (ctx == NULL) return -1;
+  if (ctx == NULL)
+  {
+    return -1;
+  }
 
   ret = ctx->read_reg(ctx->handle, reg, data, len);
 
@@ -75,7 +78,10 @@ int32_t __weak lsm6dsm_write_reg(const stmdev_ctx_t *ctx, uint8_t reg,
 {
   int32_t ret;
 
-  if (ctx == NULL) return -1;
+  if (ctx == NULL)
+  {
+    return -1;
+  }
 
   ret = ctx->write_reg(ctx->handle, reg, data, len);
 
@@ -5617,7 +5623,7 @@ int32_t lsm6dsm_fifo_write_trigger_get(const stmdev_ctx_t *ctx,
                            (uint8_t *)&master_config, 1);
 
     switch ((master_config.data_valid_sel_fifo << 1) +
-             fifo_ctrl2.timer_pedo_fifo_drdy)
+            fifo_ctrl2.timer_pedo_fifo_drdy)
     {
       case LSM6DSM_TRG_XL_GY_DRDY:
         *val = LSM6DSM_TRG_XL_GY_DRDY;
